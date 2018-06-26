@@ -12,22 +12,23 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
 
-    private List<MyObject> Species = new ArrayList<>();
+    private MyAdapter Species = new MyAdapter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        newSpecies();
+        List<MyObject> retrieveItems = newSpecies(); // ??????? ... ??????? <= ???
+        Species.setItems(retrieveItems);
 
         recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        recyclerView.setAdapter(new MyAdapter(Species));
+        recyclerView.setAdapter(new MyAdapter());
     }
 
-    private void newSpecies() {
+    public void newSpecies() {
         Species.add(new MyObject("Chat", "https://static.wamiz.fr/images/articles/facebook/article/interpreter-attitudes-chat-fb-5942b57e03e2d.jpg"));
         Species.add(new MyObject("Chien", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR04yehMFOVrI60jFe3GlC8-r7QRCNCzgkasHClyp_54tV8PaPV5Q"));
         Species.add(new MyObject("Oiseaux", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdCPTy46oJqwcdobjtxDzch4M7_pJCNIxu4JZcC6DtJ9wllRVmYw"));

@@ -8,14 +8,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
-    List<MyObject> list;
+    private List<MyObject> list;
 
-    public MyAdapter(List<MyObject> list) {
-        this.list = list;
+    public MyAdapter() {
+        list = new ArrayList<>();
+
     }
 
     @NonNull
@@ -28,6 +30,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     public void onBindViewHolder(MyViewHolder myViewHolder, int position) {
         MyObject myObject = list.get(position);
         myViewHolder.bind(myObject);
+    }
+
+    public void setItems(List<MyObject> newList){
+        list.clear();
+        list.addAll(newList);
+        notifyDataSetChanged();
     }
 
     @Override
