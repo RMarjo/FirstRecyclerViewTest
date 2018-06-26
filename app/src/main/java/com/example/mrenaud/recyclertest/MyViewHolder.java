@@ -20,7 +20,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         imageView = (ImageView) itemView.findViewById(R.id.image);
     }
 
-    public void bind(MyObject myObject) {
+    public void bind(Animal myObject) {
         textViewView.setText(myObject.getText());
         Picasso.with(imageView.getContext()).load(myObject.getImageUrl()).centerCrop().fit().into(imageView);
 

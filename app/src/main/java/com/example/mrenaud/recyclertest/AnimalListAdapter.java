@@ -6,16 +6,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
+public class AnimalListAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
-    private List<MyObject> list;
+    private List<Animal> list;
 
-    public MyAdapter() {
+    public AnimalListAdapter() {
         list = new ArrayList<>();
 
     }
@@ -28,11 +27,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     }
 
     public void onBindViewHolder(MyViewHolder myViewHolder, int position) {
-        MyObject myObject = list.get(position);
+        Animal myObject = list.get(position);
         myViewHolder.bind(myObject);
     }
 
-    public void setItems(List<MyObject> newList){
+    public void setItems(List<Animal> newList){
         list.clear();
         list.addAll(newList);
         notifyDataSetChanged();

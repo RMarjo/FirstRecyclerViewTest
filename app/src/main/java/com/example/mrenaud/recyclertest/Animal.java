@@ -1,11 +1,11 @@
 package com.example.mrenaud.recyclertest;
 
-public class MyObject {
+public class Animal {
 
     private String text;
     private String imageUrl;
 
-    public MyObject(String text, String imageUrl) {
+    public Animal(String text, String imageUrl) {
         this.text = text;
         this.imageUrl = imageUrl;
     }
