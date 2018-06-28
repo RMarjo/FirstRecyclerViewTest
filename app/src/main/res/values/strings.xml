@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Recyclertest</string>
     <string name="app_recycler_test">Chat</string>
+    <string name="app_seconde_activity_title">Bienvenue dans la seconde partie :) </string>
 </resources>
